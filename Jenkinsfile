@@ -3,7 +3,15 @@ pipeline {
   stages {
     stage('test step') {
       steps {
-        build(job: 'test job', propagate: true)
+        sh '''<?php
+namespace iHomefinder\\Api;
+interface Authentication {
+	
+	public function getUsername();
+	
+	public function getPassword();
+	
+}'''
       }
     }
   }
